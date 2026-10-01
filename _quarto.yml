@@ -1,0 +1,58 @@
+# ORCA SOP house style. This file is the same in every SOP repository
+# except for `repo-url` below. SOP-specific details go in index.qmd.
+
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "ORCA SOPs"
+  repo-url: https://github.com/orcaCoreOtago/bartender-label-sop   # <- this repo
+  repo-actions: [issue]            # "Report an issue" link on the page
+  navbar:
+    logo-href: https://orcacoreotago.github.io/   # "ORCA SOPs" title goes to the hub
+    left:
+      - text: "← All ORCA SOPs"
+        href: https://orcacoreotago.github.io/
+    right:
+      - text: "PDF"
+        icon: file-pdf
+        href: index.pdf
+      - icon: github
+        href: https://github.com/orcaCoreOtago
+  page-footer:
+    left: "ORCA Facility · University of Otago"
+
+filters:
+  - fit-figures.lua        # shrink over-tall images to fit the PDF page
+
+author: "ORCA Facility, University of Otago"
+date: last-modified
+date-format: "D MMMM YYYY"
+number-sections: true
+toc: true
+toc-depth: 2
+language:
+  title-block-published: "Last updated"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+    toc-location: left
+    callout-appearance: default
+    code-copy: true
+    format-links: false     # PDF link is in the navbar instead
+    mermaid:
+      theme: default        # light flowchart colours, same as the PDF
+  typst:                    # PDF via Typst: bundled with Quarto, no LaTeX needed
+    papersize: a4
+    margin:
+      x: 2.2cm
+      y: 2.2cm
+    fontsize: 10.5pt
+    toc-title: Contents
+    section-numbering: "1.1"
+    include-in-header:
+      text: |
+        #set par(justify: false)

@@ -1,0 +1,11 @@
+# Values used throughout the SOP. Change them here and re-render;
+# every mention in the document updates.
+#
+# Server, database name and user are NOT kept here: this site is public.
+# They live on the ORCA HCS share in \OtagoLabels\dbSetup\.
+# NEVER put the database password in this repository.
+
+dsn_name: "ORCA_ITS_DB"
+named_connection: "ORCA ITS Database Connection"
+odbc_driver: "PostgreSQL Unicode(x64)"
+contact: "the ORCA lab manager"
